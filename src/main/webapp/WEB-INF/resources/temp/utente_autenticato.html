@@ -1,0 +1,22 @@
+<div ng-controller="AuthCtrl">
+    <h1>Utente Autenticato</h1>
+
+    <table class="table table-striped" style="margin: 5%; width: 90%">
+        <thead>
+            <tr>
+                <th class="detTable">Nome</th>
+                <th class="detTable">Cognome</th>
+                <th class="detTable">Mansione</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="dipendente in dipendenti">
+                <td>{{dipendente.nome}}</td>
+                <td>
+                    {{dipendente.cognome}}
+                </td>
+                <td>{{dipendente.tipo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
