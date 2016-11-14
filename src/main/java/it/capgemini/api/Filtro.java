@@ -36,7 +36,6 @@ public class Filtro implements Filter {
         if (richiesta.getHeader("parola_d_ordine").equals("chiamata_rest_ok")) {
             chain.doFilter(richiesta, risposta);
         }
-
     }
 
     @Override
