@@ -3,15 +3,22 @@ var servizi = angular.module('zanardo.factories', []);
 
 servizi.factory('AdHocRequestInterceptor', function () {
     var TOKEN = 'non_autorizzato';
+    var AUTHORIZATION = '';
+    var CONTENT_TYPE = '';
     return {
         request: function (config) {
-            config.headers = {'authorization':'Bearer 954b6519-c952-3045-a6d0-54b2b0b998eb', 'parola_d_ordine': TOKEN};
+            config.headers = {'authorization': AUTHORIZATION, 'parola_d_ordine': TOKEN, 'Content-Type': CONTENT_TYPE};
             return config;
         },
-        definisciToken: function (autorizzato) {
-            TOKEN = autorizzato;
+        definisciToken: function (token) {
+            TOKEN = token;
+        },
+        definisciAutorizzazione: function (autorizzazione) {
+            AUTHORIZATION = autorizzazione;
+        },
+        definisciContentType: function (content_type) {
+            CONTENT_TYPE = content_type;
         }
-
     };
 });
 
@@ -20,7 +27,7 @@ servizi.factory('CaricaDipendenti', function ($http, $q) {
     var lista = function () {
 
         var defer = $q.defer();
-        $http.get('https://192.168.1.4:8250/dipendenti/1.0.0').then(function (response) {
+        $http.get('http://192.168.56.1:8287/dipendenti/1.0.0').then(function (response) {
             defer.resolve(response.data);
         }, function (response) {
             defer.reject(response);

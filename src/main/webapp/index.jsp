@@ -23,7 +23,7 @@
     </head>
     <body ng-app="lispaTest" ng-controller="MainCtrl" style="">
     <nav class="navbar navbar-default area_utente"></nav>
-      
+
     <div ui-view></div>
     
     

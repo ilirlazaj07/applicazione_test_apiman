@@ -1,7 +1,6 @@
 <div ng-controller="AuthCtrl">
     <h1>Utente Autenticato</h1>
-
-    <table class="table table-striped" style="margin: 5%; width: 90%">
+    <table class="table table-striped" style="margin: 5%; width: 90%; border: 1px solid gray">
         <thead>
             <tr>
                 <th class="detTable">Nome</th>
@@ -19,4 +18,7 @@
             </tr>
         </tbody>
     </table>
+    <br>
+     <button class="btn btn-danger" style="margin: 5%;" ng-click="generaCodici();">Rigenera codici</button>
+
 </div>

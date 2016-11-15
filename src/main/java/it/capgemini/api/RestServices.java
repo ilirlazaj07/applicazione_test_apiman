@@ -22,15 +22,20 @@ public class RestServices {
     public List<Dipendente> getDipendenti() {
         Dipendente d1 = new Dipendente();
         Dipendente d2 = new Dipendente();
+        Dipendente d3 = new Dipendente();
         d1.setCognome("Lazaj");
         d1.setNome("Ilir");
         d1.setTipo("Consulente");
         d2.setCognome("Ferrari");
         d2.setNome("Giovanni");
         d2.setTipo("Dipendente");
+        d3.setCognome("Fera");
+        d3.setNome("Carlo");
+        d3.setTipo("Consulente");
         List<Dipendente> dipendenti = new ArrayList<Dipendente>();
         dipendenti.add(d2);
         dipendenti.add(d1);
+        dipendenti.add(d3);
         return dipendenti;
     }
 
