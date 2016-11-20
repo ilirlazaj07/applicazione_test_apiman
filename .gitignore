@@ -33,3 +33,4 @@ target/
 .springBeans
 *bactions.xml
 nb-configuration.xml
+/${M2_REPO}/
