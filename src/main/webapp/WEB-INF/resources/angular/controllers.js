@@ -18,7 +18,7 @@ apiCtrls.controller('MainCtrl', ['$scope', '$http', '$state', 'AdHocRequestInter
         };
     }]);
 
-apiCtrls.controller('AuthCtrl', ['$scope', '$http', 'AdHocRequestInterceptor', 'CaricaDipendenti', function ($scope, $http, AdHocRequestInterceptor, CaricaDipendenti) {
+apiCtrls.controller('AuthCtrl', ['$scope', '$http', 'AdHocRequestInterceptor', 'CaricaDipendenti','$log', function ($scope, $http, AdHocRequestInterceptor, CaricaDipendenti, $log) {
 
         AdHocRequestInterceptor.definisciToken('chiamata_rest_ok');
 
@@ -40,11 +40,12 @@ apiCtrls.controller('AuthCtrl', ['$scope', '$http', 'AdHocRequestInterceptor', '
 
 
         function generaCodici() {
-            AdHocRequestInterceptor.definisciAutorizzazione('Basic WDlHRjBWTEVXWTFDZG5RbHdWODVJR1FuamNZYTpZb3FrR1JlQUFlQmJiNkZRUzlZeWVwbjRoUjBh');
+            AdHocRequestInterceptor.definisciAutorizzazione('Basic OWdNTHBoc3V2Zm9MX1RpRG5odFNkR3luSkdFYTpjblF3NE1GUlhuNDE4M0VuNXJXTHl2UGtwRVFh');
             AdHocRequestInterceptor.definisciContentType('application/x-www-form-urlencoded');
             $http({
                 method: 'POST',
-                data: 'grant_type=password&username=admin&password=admin', //grant_type=client_credentials
+                data: 'grant_type=password&username=admin&password=admin', 
+                //grant_type=client_credentials
                 url: 'https://192.168.56.1:8250/token'
             }).success(function (risposta) {
                 aggiorna(risposta);
@@ -54,12 +55,12 @@ apiCtrls.controller('AuthCtrl', ['$scope', '$http', 'AdHocRequestInterceptor', '
 
 
         function refreshToken() {
-            AdHocRequestInterceptor.definisciAutorizzazione('Basic WDlHRjBWTEVXWTFDZG5RbHdWODVJR1FuamNZYTpZb3FrR1JlQUFlQmJiNkZRUzlZeWVwbjRoUjBh');
+            AdHocRequestInterceptor.definisciAutorizzazione('Basic OWdNTHBoc3V2Zm9MX1RpRG5odFNkR3luSkdFYTpjblF3NE1GUlhuNDE4M0VuNXJXTHl2UGtwRVFh');
             AdHocRequestInterceptor.definisciContentType('application/x-www-form-urlencoded');
             $http({
                 method: 'POST',
                 data: 'grant_type=refresh_token&refresh_token=' + $scope.rt + '&scope=PRODUCTION',
-                url: 'https://192.168.56.1:8250/token'
+                url: ' https://192.168.56.1:8250/token'
             }).success(function (risposta) {
                 aggiorna(risposta);
             });

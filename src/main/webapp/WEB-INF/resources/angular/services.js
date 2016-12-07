@@ -27,10 +27,11 @@ servizi.factory('CaricaDipendenti', function ($http, $q) {
     var lista = function () {
 
         var defer = $q.defer();
-        $http.get('http://192.168.56.1:8287/dipendenti/1.0.0').then(function (response) {
+        $http.get('https://192.168.56.1:8250/dipendenti/1.0.0/').then(function (response) {
             defer.resolve(response.data);
         }, function (response) {
             defer.reject(response);
+            
         });
         return defer.promise;
     };

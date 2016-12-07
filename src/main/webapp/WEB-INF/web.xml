@@ -17,7 +17,7 @@
         <servlet-class>it.capgemini.api.SAML2ConsumerServlet</servlet-class>
 		
         <init-param>
-            <!-- A unique identifier for this SAML 2.0 Service Provider application -->
+            <!-- Un'identificativo univoco per questa applicazione Service Provider di tipo  SAML 2.0 -->
             <param-name>Issuer</param-name>
             <param-value>saml2.sso.demo</param-value>
         </init-param>
@@ -27,12 +27,12 @@
             <param-value>https://localhost:9443/samlsso</param-value>
         </init-param>
         <init-param>
-            <!-- The URL of the SAML 2.0 Assertion Consumer (or this Servlet) -->
+            <!-- La URL del consumer della asserzione SAML (questa Servlet) -->
             <param-name>ConsumerUrl</param-name>
             <param-value>http://localhost:8080/api/consumer</param-value>
         </init-param>
         <init-param>
-            <!-- Identifier given for the Service Provider for SAML 2.0 attribute exchange -->
+            <!-- Identificativo dato per lo Service Provider per lo scambio di attributi SAML 2.0 -->
             <param-name>AttributeConsumingServiceIndex</param-name>
             <param-value>525031504</param-value>
         </init-param>

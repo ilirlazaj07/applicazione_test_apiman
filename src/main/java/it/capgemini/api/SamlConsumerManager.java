@@ -300,6 +300,7 @@ public class SamlConsumerManager {
                                                 System.out.println("BECCATO ATTRIBUTO !!!: " + attribValue);
 						resutls.put(attrib.getName(), attribValue);
 					}
+                                       
 				}
 			}
 		}
